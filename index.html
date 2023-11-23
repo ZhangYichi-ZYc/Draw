@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>抽签</title>
+    <style>
+      .container {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f1f1f1;
+      }
+      
+      h1 {
+        color: #333333;
+      }
+      
+      button {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        width: 100px;
+        text-align: center;
+      }
+    </style>
+    
+    <script>
+      function extractName() {
+          var names = [
+              "张三", "李四", "王五"
+          ];
+
+          var randomIndex = Math.floor(Math.random() * 3);
+          var randomName = names[randomIndex];
+
+          document.getElementById("output").value = randomName;
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <button onclick="extractName()">抽取</button>
+      <br><br>
+      <input type="text" id="output" readonly>
+    </div>
+  </body>
+</html>
